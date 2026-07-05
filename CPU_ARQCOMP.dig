@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ALU</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>A:32,B:32,control:4,vec_mode:2</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>result:32,zero</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>7</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\ALU_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="420" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ROM</elementName>
+      <elementAttributes>
+        <entry>
+          <string>AddrBits</string>
+          <int>8</int>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1720" y="-180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes/>
+      <pos x="1520" y="-420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>RAMDualPort</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="740" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>32</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>0-1, 2-31</string>
+        </entry>
+      </elementAttributes>
+      <pos x="620" y="-60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Register</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="260" y="100"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Control_Unit</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>opcode:7,funct3:3,raw_vew:2</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>AluSrc,blockA,RegWrite,MemRead,MemWrite,Branch,BranchNotEq,BrIncond,regToPC,AluOp:2,regSrc:2,vec_enable,vec_mode:2</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\Control_Unit_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="-100" y="180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>EXMEM</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,freeze,sumIn:32,zeroIn,aluIn:32,read2In:32,wbAddIn:5,WBin:3,Min:6,pcPl4In:32</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>pcOut:32,zeroOut,aluOut:32,read2Out:32,wbAddOut:5,WBout:3,Mout:6,pcPl4Out:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\EXMEM_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="340" y="360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Freeze_Control</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>stall_hazard,mem_loading</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>15</int>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>pc_ifid_freeze,deep_freeze</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\Freeze_Control.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="1840" y="20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>IDEX</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,freeze,pcIn:32,read1In:32,read2In:32,immGenIn:32,aluControlin:4,wbAddIn:5,WBin:3,Min:6,EXin:4,pcPl4In:32,rs1In:5,rs2In:5</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>pcOut:32,read1Out:32,read2Out:32,immGenOut:32,aluControlout:4,wbAddOut:5,WBout:3,Mout:6,EXout:4,pcPl4Out:32,rs1Out:5,rs2Out:5</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\IDEX_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="1160" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>MemLoader</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,reset,src_data:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>loader_addr:24,loader_data:32,loader_we,mem_loading</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\MemLoader_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="1880" y="-200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>MEMWB</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,freeze,readIn:32,aluIn:32,wbAddIn:5,WBin:3,pcPl4In:32,pcPlIIn:32</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>readOut:32,aluOut:32,wbAddOut:5,WBout:3,pcPl4Out:32,pcPlIOut:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\MEMWB_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="860" y="-80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Register</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="740" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1560" y="-420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>24</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2120" y="-240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>VDD</elementName>
+      <elementAttributes/>
+      <pos x="1680" y="-140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Button</elementName>
+      <elementAttributes/>
+      <pos x="1520" y="-360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>RST</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1560" y="-360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>RST</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1840" y="-180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1840" y="-200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Hazard_Detection</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>IDEX_MemRead,IDEX_RegisterRd:5,IFID_RegisterRs1:5,IFID_RegisterRs2:5</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>stall_hazard</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\Hazard_Unit.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="1500" y="-20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="680" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="3"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>RST</string>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Multiplexer</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Ground</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="540" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ROM</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="880" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>VDD</elementName>
+      <elementAttributes/>
+      <pos x="840" y="360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1120" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>FRZ</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2180" y="40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>FRZ</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1120" y="260"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="480" y="-40"/>
+      <p2 x="620" y="-80"/>
+    </wire>
+    <wire>
+      <p1 x="620" y="320"/>
+      <p2 x="740" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="320"/>
+      <p2 x="880" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="1720" y="-260"/>
+      <p2 x="2140" y="-260"/>
+    </wire>
+    <wire>
+      <p1 x="1520" y="-420"/>
+      <p2 x="1560" y="-420"/>
+    </wire>
+    <wire>
+      <p1 x="1120" y="260"/>
+      <p2 x="1160" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="640" y="-40"/>
+      <p2 x="740" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="1820" y="-40"/>
+      <p2 x="2100" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="1520" y="-360"/>
+      <p2 x="1560" y="-360"/>
+    </wire>
+    <wire>
+      <p1 x="1840" y="-200"/>
+      <p2 x="1880" y="-200"/>
+    </wire>
+    <wire>
+      <p1 x="1820" y="40"/>
+      <p2 x="1840" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="2140" y="40"/>
+      <p2 x="2180" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="840" y="360"/>
+      <p2 x="880" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="1680" y="-140"/>
+      <p2 x="1720" y="-140"/>
+    </wire>
+    <wire>
+      <p1 x="2080" y="-140"/>
+      <p2 x="2100" y="-140"/>
+    </wire>
+    <wire>
+      <p1 x="2080" y="-240"/>
+      <p2 x="2120" y="-240"/>
+    </wire>
+    <wire>
+      <p1 x="1120" y="240"/>
+      <p2 x="1160" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="1840" y="-180"/>
+      <p2 x="1880" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="340"/>
+      <p2 x="580" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="680" y="340"/>
+      <p2 x="740" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="800" y="340"/>
+      <p2 x="860" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="1700" y="20"/>
+      <p2 x="1840" y="20"/>
+    </wire>
+    <wire>
+      <p1 x="1780" y="-160"/>
+      <p2 x="1880" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="2080" y="-240"/>
+      <p2 x="2080" y="-200"/>
+    </wire>
+    <wire>
+      <p1 x="2100" y="-140"/>
+      <p2 x="2100" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="1720" y="-260"/>
+      <p2 x="1720" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="600" y="340"/>
+      <p2 x="600" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="620" y="-80"/>
+      <p2 x="620" y="-60"/>
+    </wire>
+    <wire>
+      <p1 x="2140" y="-260"/>
+      <p2 x="2140" y="-240"/>
+    </wire>
+    <wire>
+      <p1 x="1820" y="-40"/>
+      <p2 x="1820" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="320"/>
+      <p2 x="860" y="340"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
