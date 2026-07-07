@@ -1,0 +1,2269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>2</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>ALU</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>A:32,B:32,control:4,vec_mode:2</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>result:32,zero</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>7</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\ALU_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="3980" y="-160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ROM</elementName>
+      <elementAttributes>
+        <entry>
+          <string>AddrBits</string>
+          <int>8</int>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1840" y="-60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes/>
+      <pos x="1640" y="-300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>RAMDualPort</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="4320" y="-160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>32</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>0-1, 2-31</string>
+        </entry>
+      </elementAttributes>
+      <pos x="4200" y="-180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Register</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="3840" y="0"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Control_Unit</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>opcode:7,funct3:3,raw_vew:2</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>AluSrc,blockA,RegWrite,MemRead,MemWrite,Branch,BranchNotEq,BrIncond,regToPC,AluOp:2,regSrc:2,vec_enable,vec_mode:2</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\Control_Unit_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="2800" y="700"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>EXMEM</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,freeze,sumIn:32,zeroIn,aluIn:32,read2In:32,wbAddIn:5,WBin:3,Min:6,pcPl4In:32</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>pcOut:32,zeroOut,aluOut:32,read2Out:32,wbAddOut:5,WBout:3,Mout:6,pcPl4Out:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\EXMEM_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="3920" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Freeze_Control</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>stall_hazard,mem_loading</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>15</int>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>pc_ifid_freeze,deep_freeze</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\Freeze_Control.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="1960" y="140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>IDEX</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,freeze,pcIn:32,read1In:32,read2In:32,immGenIn:32,aluControlin:4,wbAddIn:5,WBin:3,Min:6,EXin:4,pcPl4In:32,rs1In:5,rs2In:5</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>pcOut:32,read1Out:32,read2Out:32,immGenOut:32,aluControlout:4,wbAddOut:5,WBout:3,Mout:6,EXout:4,pcPl4Out:32,rs1Out:5,rs2Out:5</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\IDEX_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="2820" y="20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>MemLoader</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,reset,src_data:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>loader_addr:24,loader_data:32,loader_we,mem_loading</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\MemLoader_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="2000" y="-80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>MEMWB</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,freeze,readIn:32,aluIn:32,wbAddIn:5,WBin:3,pcPl4In:32,pcPlIIn:32</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>readOut:32,aluOut:32,wbAddOut:5,WBout:3,pcPl4Out:32,pcPlIOut:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\MEMWB_v2.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="4640" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Register</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="4320" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1680" y="-300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>24</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2240" y="-120"/>
+    </visualElement>
+    <visualElement>
+      <elementName>VDD</elementName>
+      <elementAttributes/>
+      <pos x="1800" y="-20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Button</elementName>
+      <elementAttributes/>
+      <pos x="1640" y="-240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>RST</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1680" y="-240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>RST</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1960" y="-60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1960" y="-80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>Hazard_Detection</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>IDEX_MemRead,IDEX_RegisterRd:5,IFID_RegisterRs1:5,IFID_RegisterRs2:5</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>stall_hazard</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>C:\TECH\RISC-V\Hazard_Unit.vhd</file>
+        </entry>
+      </elementAttributes>
+      <pos x="1620" y="100"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="4260" y="220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="3"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>RST</string>
+        </entry>
+      </elementAttributes>
+      <pos x="4180" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Multiplexer</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="4160" y="180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Ground</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="4120" y="220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ROM</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="4460" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>VDD</elementName>
+      <elementAttributes/>
+      <pos x="4420" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2780" y="20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>FRZ</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2300" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>FRZ</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2780" y="40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>PC2</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,reset,pc_in:32,writeEnableL</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY PC2 IS
+  PORT (
+    clk      : IN  std_logic;
+    reset    : IN  std_logic;
+    pc_in    : IN  std_logic_vector(31 DOWNTO 0);
+    writeEnableL   : IN std_logic;
+    pc_out   : OUT std_logic_vector(31 DOWNTO 0)
+    );
+END PC2;
+
+ARCHITECTURE TypeArchitecture OF PC2 IS
+BEGIN
+    PROCESS (clk, reset, writeEnableL)
+    BEGIN
+        IF (rising_edge(clk)) THEN
+            if (pc_in = &quot;UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU&quot;) then
+                pc_out &lt;= (others =&gt; &apos;0&apos;);
+            elsif (writeEnableL = &apos;0&apos;) then
+                pc_out &lt;= pc_in;
+            end if;
+        END IF;
+        IF (reset = &apos;1&apos;) THEN
+            pc_out &lt;= (others =&gt; &apos;0&apos;);
+        END IF;
+    END PROCESS;
+END TypeArchitecture;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>pc_out:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>6</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1900" y="500"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>somador</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>A:32,B:32</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE IEEE.std_logic_unsigned.ALL;
+
+ENTITY somador IS
+  PORT (
+    A, B : IN  std_logic_vector(31 DOWNTO 0);
+    Z    : OUT std_logic_vector(31 DOWNTO 0)
+    );
+END somador;
+
+ARCHITECTURE TypeArchitecture OF somador IS
+BEGIN
+Z &lt;= A + B;
+END TypeArchitecture;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>Z:32</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2140" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>somador</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>A:32,B:32</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE IEEE.std_logic_unsigned.ALL;
+
+ENTITY somador IS
+  PORT (
+    A, B : IN  std_logic_vector(31 DOWNTO 0);
+    Z    : OUT std_logic_vector(31 DOWNTO 0)
+    );
+END somador;
+
+ARCHITECTURE TypeArchitecture OF somador IS
+BEGIN
+Z &lt;= A + B;
+END TypeArchitecture;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>Z:32</string>
+        </entry>
+      </elementAttributes>
+      <pos x="3140" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>register_file</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>input:32,regSelManual:5,writeEnable,regASel:5,regBSel:5,writeRegSel:5,clk</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity register_file is
+  port(
+    outA        : out std_logic_vector(31 downto 0);
+    outB        : out std_logic_vector(31 downto 0);
+    input       : in  std_logic_vector(31 downto 0);
+    regSelManual: in  std_logic_vector(4 downto 0);
+    outRegManual: out std_logic_vector(31 downto 0);
+    writeEnable : in  std_logic;
+    regASel     : in  std_logic_vector(4 downto 0);
+    regBSel     : in  std_logic_vector(4 downto 0);
+    writeRegSel : in  std_logic_vector(4 downto 0);
+    clk         : in  std_logic
+    );
+end register_file;
+
+architecture TypeArchitecture of register_file is
+  type registerFile is array(0 to 31) of std_logic_vector(31 downto 0);
+  signal registers : registerFile :=
+   (&quot;00000000000000000000000000010000&quot;,&quot;00000000000000000000000000000001&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,
+    &quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,
+    &quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,
+    &quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,
+    &quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,
+    &quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,
+    &quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,
+    &quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;,&quot;00000000000000000000000000000000&quot;);
+
+begin
+  regFile : process (clk) is
+  begin
+    if rising_edge(clk) then
+      if (registers(to_integer(unsigned(regASel))) = &quot;UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU&quot;) THEN
+        outA &lt;= (others =&gt; &apos;0&apos;);
+      ELSE
+        outA &lt;= registers(to_integer(unsigned(regASel)));
+      END IF;
+      IF (registers(to_integer(unsigned(regBSel))) = &quot;UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU&quot;) THEN
+        outB &lt;= (others =&gt; &apos;0&apos;);
+      ELSE
+        outB &lt;= registers(to_integer(unsigned(regBSel)));
+      END IF;
+      if writeEnable = &apos;1&apos; then
+        registers(to_integer(unsigned(writeRegSel))) &lt;= input;
+        if regASel = writeRegSel then
+          outA &lt;= input;
+        end if;
+        if regBSel = writeRegSel then
+          outB &lt;= input;
+        end if;
+      end if;
+    end if;
+  end process;
+
+  outRegManual &lt;= registers(to_integer(unsigned(regSelManual)));
+
+end TypeArchitecture;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>outA:32,outB:32,outRegManual:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>12</int>
+        </entry>
+      </elementAttributes>
+      <pos x="2800" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>IFID</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,pcIn:32,pcPl4In:32,writeEnableL,instIn:32</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY IFID IS
+  PORT (
+    clk         : IN  std_logic;
+    pcIn        : IN  std_logic_vector(31 DOWNTO 0);
+    pcPl4In	 : IN  std_logic_vector(31 downto 0);
+    writeEnableL   : IN std_logic;
+    instIn      : IN  std_logic_vector(31 DOWNTO 0);
+    pcOut       : OUT std_logic_vector(31 DOWNTO 0);
+    pcPl4Out	 : OUT std_logic_vector(31 downto 0);
+    instOut     : OUT std_logic_vector(31 DOWNTO 0)
+    );
+END IFID;
+
+ARCHITECTURE TypeArchitecture OF IFID IS
+SIGNAL IDIF : std_logic_vector(95 DOWNTO 0);
+BEGIN
+	PROCESS (clk, writeEnableL)
+	BEGIN
+		IF (rising_edge(clk)) THEN
+			if (writeEnableL = &apos;0&apos;) then
+				IDIF(31 DOWNTO 0) &lt;= instIn;
+				IDIF(63 DOWNTO 32) &lt;= pcIn;
+				IDIF(95 downto 64) &lt;= pcPl4In;
+			end if;
+		END IF;
+		IF (falling_edge(clk)) THEN
+			pcOut &lt;= IDIF(63 DOWNTO 32);
+			instOut &lt;= IDIF(31 DOWNTO 0);
+			pcPl4Out &lt;= IDIF(95 downto 64);
+		END IF;
+	END PROCESS;
+END TypeArchitecture;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>pcOut:32,pcPl4Out:32,instOut:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>7</int>
+        </entry>
+      </elementAttributes>
+      <pos x="2140" y="680"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ALU_Control</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>Functs:4,AluOp:2</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity ALU_Control is
+    port(
+        Functs    : IN std_logic_vector(3 downto 0);
+        AluOp   : IN std_logic_vector(1 downto 0);
+        Control : OUT std_logic_vector(3 downto 0)
+        );
+end ALU_Control;
+
+architecture TypeArchitecture of ALU_Control is
+begin
+    control &lt;= &quot;0010&quot; when AluOp = &quot;00&quot; else
+             &quot;0110&quot; when AluOp = &quot;01&quot; else
+             &quot;0010&quot; when Functs = &quot;0000&quot; else
+             &quot;0110&quot; when Functs = &quot;1000&quot; else
+             &quot;0011&quot; when Functs = &quot;0001&quot; else
+             &quot;0101&quot; when Functs = &quot;0100&quot; else
+             &quot;0111&quot; when Functs = &quot;0101&quot; else
+             &quot;0001&quot; when Functs = &quot;0110&quot; else
+             &quot;0000&quot; when Functs = &quot;0111&quot;;
+
+end TypeArchitecture;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>Control:4</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>6</int>
+        </entry>
+      </elementAttributes>
+      <pos x="3120" y="1080"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Forward</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,regWriteWB,regWriteMEM,RSrc1:5,RSrc2:5,RDWB:5,RDMEM:5</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Forward is
+	port(
+	     clk					: IN std_logic;
+	     regWriteWB, regWriteMEM 	: IN std_logic;
+	     RSrc1, RSrc2			: IN std_logic_vector(4 downto 0);
+	     RDWB, RDMEM			: IN std_logic_vector(4 downto 0);
+	     forwardA, forwardB		: OUT std_logic_vector(1 downto 0)
+     );
+end Forward;
+
+architecture TypeArchitecture of Forward is
+	signal forwardA_interno, forwardB_interno : std_logic_vector(1 downto 0) := &quot;00&quot;;
+
+begin
+	process(clk)
+    begin
+        if ((regWriteMEM = &apos;1&apos;) and (not(RDMEM = &quot;00000&quot;)) and (RDMEM = RSrc1)) then
+        	forwardA_interno &lt;= &quot;10&quot;;
+        end if;
+
+        if ((regWriteMEM = &apos;1&apos;) and (not(RDMEM = &quot;00000&quot;)) and (RDMEM = RSrc2)) then
+        	forwardB_interno &lt;= &quot;10&quot;;
+        end if;
+
+        if ((regWriteWB = &apos;1&apos;) and (not(RDWB = &quot;00000&quot;)) and (RDWB = RSrc1)) then
+        	forwardA_interno &lt;= &quot;01&quot;;
+        end if;
+
+        if ((regWriteWB = &apos;1&apos;) and (not(RDWB = &quot;00000&quot;)) and (RDWB = RSrc2)) then
+        	forwardB_interno &lt;= &quot;01&quot;;
+        end if;
+
+    end process;
+
+    forwardA &lt;= forwardA_interno;
+    forwardB &lt;= forwardB_interno;
+end TypeArchitecture;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>forwardA:2,forwardB:2</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>9</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1600" y="520"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ROM</elementName>
+      <elementAttributes>
+        <entry>
+          <string>AddrBits</string>
+          <int>8</int>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="2140" y="540"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Const</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Value</string>
+          <long>4</long>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="2380" y="520"/>
+    </visualElement>
+    <visualElement>
+      <elementName>VDD</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="1"/>
+        </entry>
+      </elementAttributes>
+      <pos x="2000" y="680"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1800" y="500"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Ground</elementName>
+      <elementAttributes/>
+      <pos x="1880" y="660"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>32</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>0-6,7-11,12-14,15-19,20-24,25-31</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2420" y="700"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Const</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Value</string>
+          <long>0</long>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>2</int>
+        </entry>
+      </elementAttributes>
+      <pos x="2700" y="820"/>
+    </visualElement>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ImmGen</string>
+        </entry>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>inst:32</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+entity ImmGen is
+    Port( 
+        inst: in std_logic_vector(31 downto 0);  -- Entrada da instrução (32 bits)
+        imm: out std_logic_vector(31 downto 0)   -- Saída do valor imediato gerado (32 bits)
+        );
+end ImmGen;
+
+architecture Behavioral of ImmGen is
+    signal opcode      : std_logic_vector(6 downto 0);
+    signal imm_interno : std_logic_vector(31 downto 0);
+begin
+
+    opcode &lt;= inst(6 downto 0);
+
+    process(opcode, inst)
+    begin
+        -- Default zera tudo antes de cada caso, evita inferir latch
+        imm_interno &lt;= (others =&gt; &apos;0&apos;);
+
+        case opcode is
+            -- I-type: addi/andi/ori/slti/etc (0010011), load (0000011), jalr (1100111)
+            when &quot;0010011&quot; | &quot;0000011&quot; | &quot;1100111&quot; =&gt;
+                imm_interno(11 downto 0)  &lt;= inst(31 downto 20);
+                imm_interno(31 downto 12) &lt;= (others =&gt; inst(31));
+
+            -- U-type: lui (0110111), auipc (0010111)
+            when &quot;0110111&quot; | &quot;0010111&quot; =&gt;
+                imm_interno(31 downto 12) &lt;= inst(31 downto 12);
+                imm_interno(11 downto 0)  &lt;= (others =&gt; &apos;0&apos;);
+
+            -- S-type: sw (0100011)
+            when &quot;0100011&quot; =&gt;
+                imm_interno(11 downto 5)  &lt;= inst(31 downto 25);
+                imm_interno(4 downto 0)   &lt;= inst(11 downto 7);
+                imm_interno(31 downto 12) &lt;= (others =&gt; inst(31));
+
+            -- SB-type: beq/bne (1100011)
+            when &quot;1100011&quot; =&gt;
+                imm_interno(12)           &lt;= inst(31);
+                imm_interno(11)           &lt;= inst(7);
+                imm_interno(10 downto 5)  &lt;= inst(30 downto 25);
+                imm_interno(4 downto 1)   &lt;= inst(11 downto 8);
+                imm_interno(0)            &lt;= &apos;0&apos;;
+                imm_interno(31 downto 13) &lt;= (others =&gt; inst(31));
+
+            -- UJ-type: jal (1101111)
+            when &quot;1101111&quot; =&gt;
+                imm_interno(20)           &lt;= inst(31);
+                imm_interno(19 downto 12) &lt;= inst(19 downto 12);
+                imm_interno(11)           &lt;= inst(20);
+                imm_interno(10 downto 1)  &lt;= inst(30 downto 21);
+                imm_interno(0)            &lt;= &apos;0&apos;;
+                imm_interno(31 downto 21) &lt;= (others =&gt; inst(31));
+
+            when others =&gt;
+                imm_interno &lt;= (others =&gt; &apos;0&apos;);
+        end case;
+    end process;
+
+    imm &lt;= imm_interno;
+
+end Behavioral;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>imm:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>6</int>
+        </entry>
+      </elementAttributes>
+      <pos x="2500" y="1020"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2740" y="540"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>1,1,2</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>4</string>
+        </entry>
+      </elementAttributes>
+      <pos x="3300" y="540"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>1,1,1,1,1,1</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>6</string>
+        </entry>
+      </elementAttributes>
+      <pos x="3460" y="560"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>1,2</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>3</string>
+        </entry>
+      </elementAttributes>
+      <pos x="3600" y="560"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>7</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>5,1,1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2760" y="1060"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>1,3</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>4</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2980" y="1140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>4</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>2,1,1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="2880" y="1240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="3940" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>FRZ</string>
+        </entry>
+      </elementAttributes>
+      <pos x="4020" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Const</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Value</string>
+          <long>2</long>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>2</int>
+        </entry>
+      </elementAttributes>
+      <pos x="3660" y="-80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Const</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Value</string>
+          <long>0</long>
+        </entry>
+      </elementAttributes>
+      <pos x="3980" y="40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>CLK</string>
+        </entry>
+      </elementAttributes>
+      <pos x="4500" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>FRZ</string>
+        </entry>
+      </elementAttributes>
+      <pos x="4500" y="440"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Ground</elementName>
+      <elementAttributes/>
+      <pos x="4340" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Ground</elementName>
+      <elementAttributes/>
+      <pos x="4320" y="580"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>3</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>2,1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="3980" y="640"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="4060" y="-160"/>
+      <p2 x="4200" y="-200"/>
+    </wire>
+    <wire>
+      <p1 x="3460" y="640"/>
+      <p2 x="3500" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="4100" y="640"/>
+      <p2 x="4900" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="3940" y="640"/>
+      <p2 x="3980" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="2700" y="-260"/>
+      <p2 x="4860" y="-260"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="900"/>
+      <p2 x="3580" y="900"/>
+    </wire>
+    <wire>
+      <p1 x="3920" y="260"/>
+      <p2 x="4020" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="1860" y="520"/>
+      <p2 x="1900" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="2380" y="520"/>
+      <p2 x="2440" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="2760" y="520"/>
+      <p2 x="2800" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="4420" y="520"/>
+      <p2 x="4640" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="3060" y="520"/>
+      <p2 x="3840" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="2800" y="1160"/>
+      <p2 x="2980" y="1160"/>
+    </wire>
+    <wire>
+      <p1 x="1840" y="-140"/>
+      <p2 x="2260" y="-140"/>
+    </wire>
+    <wire>
+      <p1 x="3240" y="-140"/>
+      <p2 x="3980" y="-140"/>
+    </wire>
+    <wire>
+      <p1 x="2440" y="780"/>
+      <p2 x="2640" y="780"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="780"/>
+      <p2 x="3400" y="780"/>
+    </wire>
+    <wire>
+      <p1 x="1820" y="140"/>
+      <p2 x="1960" y="140"/>
+    </wire>
+    <wire>
+      <p1 x="3020" y="140"/>
+      <p2 x="3860" y="140"/>
+    </wire>
+    <wire>
+      <p1 x="2080" y="400"/>
+      <p2 x="2140" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="2720" y="400"/>
+      <p2 x="3620" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="3800" y="400"/>
+      <p2 x="3920" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1800" y="-20"/>
+      <p2 x="1840" y="-20"/>
+    </wire>
+    <wire>
+      <p1 x="2200" y="-20"/>
+      <p2 x="2220" y="-20"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="20"/>
+      <p2 x="2820" y="20"/>
+    </wire>
+    <wire>
+      <p1 x="3460" y="660"/>
+      <p2 x="3480" y="660"/>
+    </wire>
+    <wire>
+      <p1 x="2760" y="-280"/>
+      <p2 x="4880" y="-280"/>
+    </wire>
+    <wire>
+      <p1 x="4120" y="280"/>
+      <p2 x="4600" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="2020" y="540"/>
+      <p2 x="2080" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="2740" y="540"/>
+      <p2 x="2800" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="3180" y="540"/>
+      <p2 x="3300" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="4540" y="540"/>
+      <p2 x="4640" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="2080" y="540"/>
+      <p2 x="2140" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="4220" y="-160"/>
+      <p2 x="4320" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="3220" y="-160"/>
+      <p2 x="3980" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="4120" y="-160"/>
+      <p2 x="4180" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="2560" y="160"/>
+      <p2 x="2820" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="1940" y="160"/>
+      <p2 x="1960" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="2260" y="160"/>
+      <p2 x="2300" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="3020" y="160"/>
+      <p2 x="3800" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="800"/>
+      <p2 x="3420" y="800"/>
+    </wire>
+    <wire>
+      <p1 x="2440" y="800"/>
+      <p2 x="2680" y="800"/>
+    </wire>
+    <wire>
+      <p1 x="2200" y="420"/>
+      <p2 x="2280" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="3040" y="420"/>
+      <p2 x="3060" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="3900" y="420"/>
+      <p2 x="3920" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="4500" y="420"/>
+      <p2 x="4640" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="2700" y="420"/>
+      <p2 x="2800" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="2680" y="1060"/>
+      <p2 x="2760" y="1060"/>
+    </wire>
+    <wire>
+      <p1 x="1900" y="-40"/>
+      <p2 x="2000" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="40"/>
+      <p2 x="2820" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="3020" y="40"/>
+      <p2 x="3220" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="2000" y="680"/>
+      <p2 x="2040" y="680"/>
+    </wire>
+    <wire>
+      <p1 x="3460" y="680"/>
+      <p2 x="3500" y="680"/>
+    </wire>
+    <wire>
+      <p1 x="1640" y="-300"/>
+      <p2 x="1680" y="-300"/>
+    </wire>
+    <wire>
+      <p1 x="1840" y="300"/>
+      <p2 x="2280" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="2800" y="300"/>
+      <p2 x="3480" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="3920" y="300"/>
+      <p2 x="3980" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="1840" y="560"/>
+      <p2 x="1900" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="2200" y="560"/>
+      <p2 x="2260" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="3220" y="560"/>
+      <p2 x="3300" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="3380" y="560"/>
+      <p2 x="3460" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="3560" y="560"/>
+      <p2 x="3600" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="4620" y="560"/>
+      <p2 x="4640" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="2880" y="1200"/>
+      <p2 x="3720" y="1200"/>
+    </wire>
+    <wire>
+      <p1 x="2700" y="820"/>
+      <p2 x="2780" y="820"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="820"/>
+      <p2 x="3440" y="820"/>
+    </wire>
+    <wire>
+      <p1 x="2720" y="180"/>
+      <p2 x="2820" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="3020" y="180"/>
+      <p2 x="3720" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="2120" y="440"/>
+      <p2 x="2140" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="3040" y="440"/>
+      <p2 x="3080" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="3840" y="440"/>
+      <p2 x="3900" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="4500" y="440"/>
+      <p2 x="4640" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="4840" y="440"/>
+      <p2 x="4860" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="1080"/>
+      <p2 x="2840" y="1080"/>
+    </wire>
+    <wire>
+      <p1 x="3060" y="1080"/>
+      <p2 x="3120" y="1080"/>
+    </wire>
+    <wire>
+      <p1 x="1960" y="-60"/>
+      <p2 x="2000" y="-60"/>
+    </wire>
+    <wire>
+      <p1 x="2080" y="700"/>
+      <p2 x="2140" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="2400" y="700"/>
+      <p2 x="2420" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="2440" y="700"/>
+      <p2 x="2800" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="700"/>
+      <p2 x="3180" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="3840" y="700"/>
+      <p2 x="4000" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="3020" y="60"/>
+      <p2 x="3240" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="3240" y="60"/>
+      <p2 x="3900" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="2760" y="320"/>
+      <p2 x="3080" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="3880" y="320"/>
+      <p2 x="3920" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="4120" y="320"/>
+      <p2 x="4580" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="2040" y="580"/>
+      <p2 x="2140" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="1880" y="580"/>
+      <p2 x="1900" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="3240" y="580"/>
+      <p2 x="3300" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="3400" y="580"/>
+      <p2 x="3460" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="3580" y="580"/>
+      <p2 x="3600" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="4320" y="580"/>
+      <p2 x="4620" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="4200" y="200"/>
+      <p2 x="4320" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="4440" y="200"/>
+      <p2 x="4460" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="2800" y="200"/>
+      <p2 x="2820" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="3020" y="200"/>
+      <p2 x="3840" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="840"/>
+      <p2 x="3460" y="840"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="1100"/>
+      <p2 x="2800" y="1100"/>
+    </wire>
+    <wire>
+      <p1 x="3240" y="1100"/>
+      <p2 x="3780" y="1100"/>
+    </wire>
+    <wire>
+      <p1 x="4840" y="460"/>
+      <p2 x="4880" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="4560" y="460"/>
+      <p2 x="4640" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="2700" y="460"/>
+      <p2 x="2800" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="1960" y="-80"/>
+      <p2 x="2000" y="-80"/>
+    </wire>
+    <wire>
+      <p1 x="3660" y="-80"/>
+      <p2 x="3960" y="-80"/>
+    </wire>
+    <wire>
+      <p1 x="1940" y="80"/>
+      <p2 x="2220" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="2740" y="80"/>
+      <p2 x="2820" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="2280" y="720"/>
+      <p2 x="2360" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="2440" y="720"/>
+      <p2 x="2560" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="2740" y="720"/>
+      <p2 x="2800" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="720"/>
+      <p2 x="3220" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="2360" y="720"/>
+      <p2 x="2400" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="2740" y="340"/>
+      <p2 x="3060" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="3900" y="340"/>
+      <p2 x="3920" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="4120" y="340"/>
+      <p2 x="4420" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="3420" y="600"/>
+      <p2 x="3460" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="3940" y="600"/>
+      <p2 x="4100" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="2700" y="600"/>
+      <p2 x="3060" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="2900" y="1240"/>
+      <p2 x="3100" y="1240"/>
+    </wire>
+    <wire>
+      <p1 x="4120" y="220"/>
+      <p2 x="4160" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="4260" y="220"/>
+      <p2 x="4320" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="4380" y="220"/>
+      <p2 x="4440" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="220"/>
+      <p2 x="2820" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="860"/>
+      <p2 x="3480" y="860"/>
+    </wire>
+    <wire>
+      <p1 x="2120" y="480"/>
+      <p2 x="2440" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="2680" y="480"/>
+      <p2 x="2800" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="4600" y="480"/>
+      <p2 x="4640" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="4340" y="480"/>
+      <p2 x="4560" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="4840" y="480"/>
+      <p2 x="4900" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="3100" y="1120"/>
+      <p2 x="3120" y="1120"/>
+    </wire>
+    <wire>
+      <p1 x="3960" y="-100"/>
+      <p2 x="3980" y="-100"/>
+    </wire>
+    <wire>
+      <p1 x="1880" y="740"/>
+      <p2 x="2140" y="740"/>
+    </wire>
+    <wire>
+      <p1 x="2440" y="740"/>
+      <p2 x="2740" y="740"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="740"/>
+      <p2 x="2800" y="740"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="740"/>
+      <p2 x="3560" y="740"/>
+    </wire>
+    <wire>
+      <p1 x="2760" y="100"/>
+      <p2 x="2820" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="3820" y="360"/>
+      <p2 x="3920" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="2120" y="620"/>
+      <p2 x="2260" y="620"/>
+    </wire>
+    <wire>
+      <p1 x="3440" y="620"/>
+      <p2 x="3460" y="620"/>
+    </wire>
+    <wire>
+      <p1 x="1640" y="-240"/>
+      <p2 x="1680" y="-240"/>
+    </wire>
+    <wire>
+      <p1 x="4420" y="240"/>
+      <p2 x="4460" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="3920" y="240"/>
+      <p2 x="3940" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="880"/>
+      <p2 x="3240" y="880"/>
+    </wire>
+    <wire>
+      <p1 x="1800" y="500"/>
+      <p2 x="1860" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="2640" y="500"/>
+      <p2 x="2800" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="4580" y="500"/>
+      <p2 x="4640" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="1860" y="500"/>
+      <p2 x="1900" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="2840" y="1140"/>
+      <p2 x="2980" y="1140"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="1140"/>
+      <p2 x="3060" y="1140"/>
+    </wire>
+    <wire>
+      <p1 x="2200" y="-120"/>
+      <p2 x="2240" y="-120"/>
+    </wire>
+    <wire>
+      <p1 x="3780" y="-120"/>
+      <p2 x="3980" y="-120"/>
+    </wire>
+    <wire>
+      <p1 x="2120" y="760"/>
+      <p2 x="2140" y="760"/>
+    </wire>
+    <wire>
+      <p1 x="2440" y="760"/>
+      <p2 x="2680" y="760"/>
+    </wire>
+    <wire>
+      <p1 x="3000" y="760"/>
+      <p2 x="3380" y="760"/>
+    </wire>
+    <wire>
+      <p1 x="2660" y="120"/>
+      <p2 x="2820" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="3880" y="120"/>
+      <p2 x="4180" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="3020" y="120"/>
+      <p2 x="3820" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="2360" y="1020"/>
+      <p2 x="2500" y="1020"/>
+    </wire>
+    <wire>
+      <p1 x="2620" y="1020"/>
+      <p2 x="2660" y="1020"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="380"/>
+      <p2 x="3320" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="3860" y="380"/>
+      <p2 x="3920" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="4120" y="380"/>
+      <p2 x="4540" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="2560" y="160"/>
+      <p2 x="2560" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="3840" y="200"/>
+      <p2 x="3840" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="3840" y="520"/>
+      <p2 x="3840" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="3460" y="680"/>
+      <p2 x="3460" y="840"/>
+    </wire>
+    <wire>
+      <p1 x="4100" y="600"/>
+      <p2 x="4100" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="2440" y="480"/>
+      <p2 x="2440" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="3080" y="320"/>
+      <p2 x="3080" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="3720" y="180"/>
+      <p2 x="3720" y="1200"/>
+    </wire>
+    <wire>
+      <p1 x="3980" y="40"/>
+      <p2 x="3980" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="4620" y="560"/>
+      <p2 x="4620" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="2700" y="-260"/>
+      <p2 x="2700" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="2700" y="460"/>
+      <p2 x="2700" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="4880" y="-280"/>
+      <p2 x="4880" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="3220" y="560"/>
+      <p2 x="3220" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="3220" y="-160"/>
+      <p2 x="3220" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="1940" y="80"/>
+      <p2 x="1940" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="3860" y="140"/>
+      <p2 x="3860" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="3480" y="660"/>
+      <p2 x="3480" y="860"/>
+    </wire>
+    <wire>
+      <p1 x="3480" y="300"/>
+      <p2 x="3480" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="2840" y="1080"/>
+      <p2 x="2840" y="1140"/>
+    </wire>
+    <wire>
+      <p1 x="2200" y="-120"/>
+      <p2 x="2200" y="-80"/>
+    </wire>
+    <wire>
+      <p1 x="3100" y="1120"/>
+      <p2 x="3100" y="1240"/>
+    </wire>
+    <wire>
+      <p1 x="2080" y="400"/>
+      <p2 x="2080" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="2080" y="540"/>
+      <p2 x="2080" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="2720" y="180"/>
+      <p2 x="2720" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="4000" y="660"/>
+      <p2 x="4000" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="3620" y="400"/>
+      <p2 x="3620" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="4900" y="480"/>
+      <p2 x="4900" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="3240" y="580"/>
+      <p2 x="3240" y="880"/>
+    </wire>
+    <wire>
+      <p1 x="3240" y="-140"/>
+      <p2 x="3240" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="3880" y="120"/>
+      <p2 x="3880" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="3500" y="640"/>
+      <p2 x="3500" y="680"/>
+    </wire>
+    <wire>
+      <p1 x="2220" y="-20"/>
+      <p2 x="2220" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="1840" y="300"/>
+      <p2 x="1840" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="1840" y="-140"/>
+      <p2 x="1840" y="-60"/>
+    </wire>
+    <wire>
+      <p1 x="2740" y="720"/>
+      <p2 x="2740" y="740"/>
+    </wire>
+    <wire>
+      <p1 x="2740" y="80"/>
+      <p2 x="2740" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="3380" y="560"/>
+      <p2 x="3380" y="760"/>
+    </wire>
+    <wire>
+      <p1 x="4020" y="160"/>
+      <p2 x="4020" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="2360" y="720"/>
+      <p2 x="2360" y="1020"/>
+    </wire>
+    <wire>
+      <p1 x="3900" y="420"/>
+      <p2 x="3900" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="3900" y="60"/>
+      <p2 x="3900" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="4540" y="380"/>
+      <p2 x="4540" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="2880" y="1200"/>
+      <p2 x="2880" y="1240"/>
+    </wire>
+    <wire>
+      <p1 x="1860" y="500"/>
+      <p2 x="1860" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="3780" y="-120"/>
+      <p2 x="3780" y="1100"/>
+    </wire>
+    <wire>
+      <p1 x="4420" y="340"/>
+      <p2 x="4420" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="2120" y="440"/>
+      <p2 x="2120" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="2120" y="620"/>
+      <p2 x="2120" y="760"/>
+    </wire>
+    <wire>
+      <p1 x="2760" y="-280"/>
+      <p2 x="2760" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="2760" y="100"/>
+      <p2 x="2760" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="2760" y="320"/>
+      <p2 x="2760" y="520"/>
+    </wire>
+    <wire>
+      <p1 x="3400" y="580"/>
+      <p2 x="3400" y="780"/>
+    </wire>
+    <wire>
+      <p1 x="2640" y="500"/>
+      <p2 x="2640" y="780"/>
+    </wire>
+    <wire>
+      <p1 x="4560" y="460"/>
+      <p2 x="4560" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="2260" y="560"/>
+      <p2 x="2260" y="620"/>
+    </wire>
+    <wire>
+      <p1 x="2260" y="-140"/>
+      <p2 x="2260" y="-120"/>
+    </wire>
+    <wire>
+      <p1 x="4180" y="220"/>
+      <p2 x="4180" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="4180" y="-160"/>
+      <p2 x="4180" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="1880" y="580"/>
+      <p2 x="1880" y="740"/>
+    </wire>
+    <wire>
+      <p1 x="4440" y="200"/>
+      <p2 x="4440" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="3800" y="160"/>
+      <p2 x="3800" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="740"/>
+      <p2 x="2780" y="820"/>
+    </wire>
+    <wire>
+      <p1 x="2780" y="220"/>
+      <p2 x="2780" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="3420" y="600"/>
+      <p2 x="3420" y="800"/>
+    </wire>
+    <wire>
+      <p1 x="2400" y="700"/>
+      <p2 x="2400" y="720"/>
+    </wire>
+    <wire>
+      <p1 x="2660" y="120"/>
+      <p2 x="2660" y="1020"/>
+    </wire>
+    <wire>
+      <p1 x="3940" y="160"/>
+      <p2 x="3940" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="3940" y="600"/>
+      <p2 x="3940" y="640"/>
+    </wire>
+    <wire>
+      <p1 x="4580" y="320"/>
+      <p2 x="4580" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="2280" y="300"/>
+      <p2 x="2280" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="3560" y="560"/>
+      <p2 x="3560" y="740"/>
+    </wire>
+    <wire>
+      <p1 x="4200" y="-200"/>
+      <p2 x="4200" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="3180" y="540"/>
+      <p2 x="3180" y="700"/>
+    </wire>
+    <wire>
+      <p1 x="3820" y="120"/>
+      <p2 x="3820" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="3440" y="620"/>
+      <p2 x="3440" y="820"/>
+    </wire>
+    <wire>
+      <p1 x="2800" y="200"/>
+      <p2 x="2800" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="2800" y="1100"/>
+      <p2 x="2800" y="1160"/>
+    </wire>
+    <wire>
+      <p1 x="3060" y="340"/>
+      <p2 x="3060" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="3060" y="1080"/>
+      <p2 x="3060" y="1140"/>
+    </wire>
+    <wire>
+      <p1 x="3060" y="520"/>
+      <p2 x="3060" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="2040" y="580"/>
+      <p2 x="2040" y="680"/>
+    </wire>
+    <wire>
+      <p1 x="2680" y="480"/>
+      <p2 x="2680" y="760"/>
+    </wire>
+    <wire>
+      <p1 x="2680" y="800"/>
+      <p2 x="2680" y="1060"/>
+    </wire>
+    <wire>
+      <p1 x="3320" y="380"/>
+      <p2 x="3320" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="3960" y="-100"/>
+      <p2 x="3960" y="-80"/>
+    </wire>
+    <wire>
+      <p1 x="4600" y="280"/>
+      <p2 x="4600" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="3580" y="580"/>
+      <p2 x="3580" y="900"/>
+    </wire>
+    <wire>
+      <p1 x="4860" y="-260"/>
+      <p2 x="4860" y="440"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
